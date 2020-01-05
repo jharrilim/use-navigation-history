@@ -7,6 +7,7 @@
     "build": "tsc",
     "build:watch": "tsc --watch",
     "test": "jest --verbose",
+    "test:ci": "jest --ci --reporters=jest-junit --reporters=default --coverage --coverageReporters=cobertura --coverageReporters=html",
     "test:watch": "jest --watch --verbose"
   },
   "repository": {
@@ -31,6 +32,7 @@
     "@types/jest": "^24.0.25",
     "@types/react": "^16.9.17",
     "jest": "^24.9.0",
+    "jest-junit": "^10.0.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-test-renderer": "^16.12.0",
