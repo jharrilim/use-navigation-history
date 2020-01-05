@@ -1,0 +1,38 @@
+{
+  "name": "@jharrilim/use-navigation-history",
+  "version": "0.1.0",
+  "description": "React Hook: Navigation History",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jharrilim/use-navigation-history.git"
+  },
+  "keywords": [
+    "react",
+    "navigation",
+    "history",
+    "hook"
+  ],
+  "author": "Joseph Harrison-Lim",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jharrilim/use-navigation-history/issues"
+  },
+  "homepage": "https://github.com/jharrilim/use-navigation-history#readme",
+  "devDependencies": {
+    "@testing-library/react": "^9.4.0",
+    "@testing-library/react-hooks": "^3.2.1",
+    "@types/jest": "^24.0.25",
+    "@types/react": "^16.9.17",
+    "jest": "^24.9.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-test-renderer": "^16.12.0",
+    "ts-jest": "^24.2.0",
+    "typescript": "^3.7.4"
+  }
+}
