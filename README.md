@@ -5,9 +5,11 @@
 
 React hook for creating and tracking navigation history
 
-[Azure DevOps tests]: https://img.shields.io/azure-devops/tests/josephharrisonlim/josephharrisonlim/5?style=flat-square
+## Install
 
-[npm]: (https://img.shields.io/npm/v/@jharrilim/use-navigation-history?style=flat-square)
+```sh
+npm i @jharrilim/use-navigation-stack
+```
 
 
 ## Example
@@ -52,3 +54,6 @@ const Navigator: FC<NavigatorProps> = ({ routes = ['Home'] }) => {
   );
 };
 ```
+
+[Azure DevOps tests]: https://img.shields.io/azure-devops/tests/josephharrisonlim/josephharrisonlim/5?style=flat-square
+[npm]: (https://img.shields.io/npm/v/@jharrilim/use-navigation-history?style=flat-square)
