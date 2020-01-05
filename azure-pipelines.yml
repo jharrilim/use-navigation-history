@@ -24,7 +24,7 @@ steps:
   displayName: 'Compile'
 
 - script: |
-    npm t
+    npm run test:ci
   displayName: 'Run Tests'
 
 - task: PublishTestResults@2
