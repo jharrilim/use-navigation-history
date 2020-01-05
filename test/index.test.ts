@@ -36,19 +36,5 @@ describe('# Acceptance Tests', () => {
     expect(result.current.current).toBe(next);
   });
 
-  it.each([
-    [[stringRoute], 2],
-    [multipleRoutes, 4],
-    [objectRoutes, 10],
-  ])
-    ('won\'t navigate further than the last route in history given:\n\troutes:\t %j\n\tamount:\t %j\n\ttime:\t',
-      ([...routes], amount) => {
-        const { result } = renderHook(() => useNavigationHistory(...routes));
-        Object.keys(amount).forEach(() => {
-          act(() => void result.current.forwards());
-        });
-
-        // expect(result.current.current).toEqual(routes[routes.length - 1]);
-      });
 });
 

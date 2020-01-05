@@ -41,5 +41,45 @@ describe('# useNavigationHistory', () => {
 
       expect(result.current.current).toBe(secondRoute);
     });
+
+  });
+
+  describe('## backwards', () => {
+    it('moves backwards to the previous route', () => {
+      const firstRoute = '/';
+      const secondRoute = 'popular';
+      const { result } = renderHook(() => useNavigationHistory(firstRoute, secondRoute));
+
+      act(() => {
+        result.current.forwards();
+      });
+
+      expect(result.current.current).toBe(secondRoute);
+
+      act(() => {
+        result.current.backwards();
+      });
+
+      expect(result.current.current).toBe(firstRoute);
+    });
+
+    it('cannot navigate before the first route', () => {
+      const firstRoute = '/';
+      const secondRoute = 'popular';
+      const { result } = renderHook(() => useNavigationHistory(firstRoute, secondRoute));
+
+      act(() => {
+        result.current.forwards();
+      });
+
+      expect(result.current.current).toBe(secondRoute);
+
+      act(() => {
+        result.current.backwards();
+        result.current.backwards();
+      });
+
+      expect(result.current.current).toBe(firstRoute);
+    });
   });
 });
