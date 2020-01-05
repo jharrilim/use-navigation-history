@@ -7,13 +7,13 @@ const multipleRoutes = [
   'profile',
   'settings',
   'privacy'
-];
+] as const;
 
 const objectRoutes = [
   { routeName: 'github.com', routeParams: [] },
   { routeName: 'profile', routeParams: [] },
   { routeName: 'repositories', routeParams: ['q'] },
-];
+] as const;
 
 describe('# Acceptance Tests', () => {
   it.each([
@@ -22,7 +22,7 @@ describe('# Acceptance Tests', () => {
     objectRoutes,
   ])('renders with:\n\troutes:\t %j\n\ttime:\t', (...args) => {
     const { result } = renderHook(() => useNavigationHistory(...args));
-    expect([result.current.current]).toEqual(args);
+    expect(result.current.routes).toEqual(args);
   });
 
   it.each([

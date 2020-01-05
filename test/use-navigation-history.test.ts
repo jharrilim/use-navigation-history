@@ -1,20 +1,6 @@
 import { renderHook, act } from '@testing-library/react-hooks';
 import { useNavigationHistory } from '../src';
 
-const stringRoute = 'landing';
-
-const multipleRoutes = [
-  'profile',
-  'settings',
-  'privacy'
-];
-
-const objectRoutes = [
-  { routeName: 'github.com', routeParams: [] },
-  { routeName: 'profile', routeParams: [] },
-  { routeName: 'repositories', routeParams: ['q'] },
-];
-
 describe('# useNavigationHistory', () => {
   describe('## forwards', () => {
     it('moves forward to the next route', () => {
@@ -96,4 +82,12 @@ describe('# useNavigationHistory', () => {
       expect(result.current.current).toBe(firstRoute);
     });
   });
+
+  describe('## current', () => {
+    it('retrieves the current route (first route) given multiple routes', () => {
+      const { result } = renderHook(() => useNavigationHistory('Hello', 'World'));
+
+      expect(result.current.current).toBe('Hello');
+    });
+  })
 });

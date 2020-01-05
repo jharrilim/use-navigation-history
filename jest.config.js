@@ -1,5 +1,5 @@
 /**
- * @type {jest.ProjectConfig}
+ * @type {jest.InitialOptions}
  */
 module.exports = {
   roots: [
@@ -15,5 +15,6 @@ module.exports = {
     'jsx',
     'json',
     'node'
-  ]
+  ],
+  setupFilesAfterEnv: ['<rootDir>/test/jest.setup.ts']
 };
