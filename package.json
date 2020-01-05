@@ -4,7 +4,8 @@
   "description": "React Hook: Navigation History",
   "main": "dist/index.js",
   "scripts": {
-    "test": "jest",
+    "build": "tsc",
+    "test": "jest --verbose",
     "test:watch": "jest --watch --verbose"
   },
   "repository": {
