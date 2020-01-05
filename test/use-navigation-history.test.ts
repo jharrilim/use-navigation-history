@@ -42,6 +42,20 @@ describe('# useNavigationHistory', () => {
       expect(result.current.current).toBe(secondRoute);
     });
 
+    it('overwrites next cached routes when given a new route', () => {
+      const firstRoute = '/';
+      const secondRoute = 'popular';
+      const newRoute = 'new';
+      const { result } = renderHook(() => useNavigationHistory(firstRoute, secondRoute));
+
+      act(() => {
+        result.current.forwards(newRoute);
+      });
+
+      expect(result.current.current).toBe(newRoute);
+      expect(result.current.routes).toEqual([firstRoute, newRoute]);
+    });
+
   });
 
   describe('## backwards', () => {
