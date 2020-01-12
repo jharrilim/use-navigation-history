@@ -1,14 +1,14 @@
 # React Hook: useNavigationHistory
 
 [![Azure DevOps tests]](https://dev.azure.com/josephharrisonlim/josephharrisonlim/_build?definitionId=5&_a=summary)
-[![npm]](https://www.npmjs.com/package/@jharrilim/use-navigation-history)
+[![npm]](https://www.npmjs.com/package/%40jharrilim/use-navigation-history)
 
 React hook for creating and tracking navigation history
 
 ## Install
 
 ```sh
-npm i @jharrilim/use-navigation-stack
+npm i @jharrilim/use-navigation-history
 ```
 
 
@@ -16,7 +16,7 @@ npm i @jharrilim/use-navigation-stack
 
 ```tsx
 import React, { FC, useState } from 'react';
-import { useNavigationHistory } from '@jharrilim/use-navigation-stack';
+import { useNavigationHistory } from '@jharrilim/use-navigation-history';
 
 interface NavigatorProps {
   routes?: string[];
@@ -56,4 +56,5 @@ const Navigator: FC<NavigatorProps> = ({ routes = ['Home'] }) => {
 ```
 
 [Azure DevOps tests]: https://img.shields.io/azure-devops/tests/josephharrisonlim/josephharrisonlim/5?style=flat-square
+
 [npm]: (https://img.shields.io/npm/v/@jharrilim/use-navigation-history?style=flat-square)
