@@ -1,6 +1,6 @@
 {
   "name": "@jharrilim/use-navigation-history",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "React Hook: Navigation History",
   "main": "dist/index.js",
   "scripts": {
