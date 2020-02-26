@@ -10,8 +10,9 @@ export function useNavigationHistory<T>(...routes: T[]) {
     if(position <= 0) {
       return _routes[0];
     }
-    setPosition(position - 1);
-    return _routes[position];
+    const newPosition = position - 1;
+    setPosition(newPosition);
+    return _routes[newPosition];
   };
 
   const forwards = (newRoute?: T) => {
@@ -39,7 +40,21 @@ export function useNavigationHistory<T>(...routes: T[]) {
     get routes() {
       return Object.freeze(_routes);
     },
+    get bottom() {
+      return Object.freeze(_routes[0]);
+    },
+    get top() {
+      return Object.freeze(_routes[_routes.length - 1]);
+    },
+    get isBottom() {
+      return _routes[position] === _routes[0];
+    },
+    get isTop() {
+      return _routes[position] === _routes[_routes.length - 1];
+    },
+    position,
     backwards,
     forwards,
   };
 }
+
